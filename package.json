@@ -1,0 +1,25 @@
+{
+  "name": "issue-summary",
+  "version": "1.0.0",
+  "description": "generates a summary from issues on a repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olciea/issue-summary.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olciea/issue-summary/issues"
+  },
+  "homepage": "https://github.com/olciea/issue-summary#readme",
+  "dependencies": {
+    "@actions/core": "^1.1.0",
+    "@actions/github": "^1.1.0",
+    "@octokit/rest": "^17.0.0"
+  }
+}

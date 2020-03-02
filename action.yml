@@ -1,0 +1,21 @@
+name: 'issue-summary'
+description: 'Summarizes issues'
+inputs:
+  PAT_FOR_ISSUES:  
+    description: 'pat'
+    required: true
+  GITHUB_WORKSPACE:
+    description: 'repo, i.e olicea/pokefacts'
+    required: true
+  COMMITER_EMAIL:
+    description: 'Email address of the commiter'
+    required: true
+  COMMITER_NAME:
+    description: 'Name of the commiter'
+    required: true
+  CONFIG_JSON:
+    description: 'JSON defining the widget config'
+    required: false
+runs:
+  using: 'node12'
+  main: 'index.js'
