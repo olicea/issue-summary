@@ -18,7 +18,6 @@ const octokit = new Octokit({
 });
 
 const fs = require("fs");
-//const project_id = process.env.PROJECT_ID;
 var config_json = process.env.CONFIG_JSON;
 
 const defaultFileName = 'issue_summary.md';

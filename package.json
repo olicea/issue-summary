@@ -4,7 +4,9 @@
   "description": "generates a summary from issues on a repo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint index.js",
+    "package": "ncc build index.js -o dist",
+    "test": "eslint index.test.js && jest"
   },
   "repository": {
     "type": "git",
@@ -18,8 +20,11 @@
   },
   "homepage": "https://github.com/olciea/issue-summary#readme",
   "dependencies": {
-    "@actions/core": "^1.1.0",
+    "@actions/core": "^1.2.3",
     "@actions/github": "^1.1.0",
-    "@octokit/rest": "^17.0.0"
+    "@octokit/rest": "^17.0.0",
+    "@zeit/ncc": "^0.21.1",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0"
   }
 }

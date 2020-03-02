@@ -1,11 +1,13 @@
 # Using and Developing Generator Script(s)
 
 
-## Inputs
+## Steps to test
 - `export PAT_FOR_ISSUES=<YOURPAT>`
 - `export GITHUB_WORKSPACE=<PATH TO ROOT OF REPO>`
+- `export COMMITER_NAME=name`
+- `export COMMITER_EMAIL=email-address`
 - `npm install`
-- `node issue_summary_generator.js`
+- `node index.js`
 
 
 This action summarizes the issues and created a file `issue-summary.md`
