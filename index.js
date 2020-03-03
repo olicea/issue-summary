@@ -9,7 +9,7 @@
   CONFIG_JSON= [{"title":"test issues", "label:"test-issues", "thresholds":"10,20,30"}, {"label:"needs-triage"}]
   COMMITTER_EMAIL: olicea@github.com
   COMMITTER_NAME: Octavio Licea Leon
-  COMMITER_USERNAME: olicea 
+  COMMITTER_USERNAME: olicea 
  */
 
 const { Octokit } = require("@octokit/rest");
@@ -190,11 +190,11 @@ async function commitFile(data)
 {
     const email = process.env.COMMITTER_EMAIL;
     const name = process.env.COMMITTER_NAME;
-    //const userName = process.env.COMMITER_USERNAME; 
+    //const userName = process.env.COMMITTER_USERNAME; 
 
     if (email == undefined || name == undefined) // || userName == undefined)
     {
-        console.warn("missing COMMITTER_EMAIL, NAME, or USERNAME. Skipping commiting the content to the repo");
+        console.warn("missing COMMITTER_EMAIL, NAME, or USERNAME. Skipping committing the content to the repo");
         return;
     }
 
@@ -202,20 +202,20 @@ async function commitFile(data)
 
     try{
         // find the file
-        var file  = await octokit.repos.getContents({ owner: owner, path: fileName, repo: repo });
+        var file = await octokit.repos.getContents({ owner: owner, path: fileName, repo: repo });
 
         // update, provide previous hash
-        existing  = await octokit.repos.createOrUpdateFile({owner:owner, 
-            repo: repo, 
-            path: fileName, 
-            message: `Updating ${fileName}`, 
-            content: buffer.toString('base64'),
-            committer: {email: email, name: name },
-            author: { email: email, name: name },
-            sha: file.data.sha
+        await octokit.repos.createOrUpdateFile({owner:owner, 
+          repo: repo, 
+          path: fileName, 
+          message: `Updating ${fileName}`, 
+          content: buffer.toString('base64'),
+          committer: {email: email, name: name },
+          author: { email: email, name: name },
+          sha: file.data.sha
         });
     }
-    catch
+    catch (e)
     {
         // create file
         await octokit.repos.createOrUpdateFile({owner:owner, 
